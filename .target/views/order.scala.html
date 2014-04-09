@@ -1,0 +1,24 @@
+@* order Template File *@
+@(orders: List[Order])
+
+@index(""){
+	<div class="wrapper">
+		<div class="text-center">
+	@if(orders.isEmpty()){
+		<h1>You have no pending order</h1>
+	}else{
+		<h1>Your Orders</h1>
+	<ul>
+	
+	@for(order <- orders){
+		<li>Order made: @order.getDate()</li>
+		<li>Quantity of products in order: @order.getQuantityOfProducts()</li>
+		<li>Total cost: @order.getTotalCost()</li>
+	}
+	
+	</ul>
+	}
+	</div>
+	</div>
+	
+}

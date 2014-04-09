@@ -1,0 +1,14 @@
+@(categories: List[Category])(message: String)
+@index(""){
+	
+	<div class="wrapper">
+	<div class="options">
+	<ul>
+	@for(category <- categories){
+		<li><span class="btn btn"><a href="/products/category/@category.getName()"><i class="fa fa-@category.getBootstrapSymbol() fa-5x"></i><br>@category.getName()</a></span></li>
+	}	
+	</ul>
+	</div>
+	</div>
+	
+}

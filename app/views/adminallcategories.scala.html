@@ -1,0 +1,19 @@
+@* adminallcategories Template File *@
+@(categories: List[Category])
+@index(""){
+
+<div class="wrapper">
+<div class="edit-table" id="category-table">
+	<table>
+	@for(category <- categories){
+		<tr>
+		<td>@category.getId()</td>
+		<td>@category.getName()</td>
+		<td>@category.getBootstrapSymbol()</td>
+		<td id="delete-product"><a href="/admin/edit/categories/delete/@category.getId()"><i class="fa fa-trash-o"></i></a></td>
+		</tr>
+	}
+	</table>
+	</div>
+	</div>
+}

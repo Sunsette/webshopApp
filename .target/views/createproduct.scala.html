@@ -1,0 +1,55 @@
+@* createproduct Template File *@
+@(param: Any)
+
+@param
+
+@index(""){
+<div class="form-wrapper">
+
+<div class="text-center"><h1>Create Product</h1></div>
+
+	<form action="@routes.ProductController.createProduct()" method="post" role="form">
+  <div class="form-group">
+    <label for="product-name">Product name</label>
+    <input type="text" class="form-control" id="product-name" name="productName" placeholder="Product name">
+  </div>
+  
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="description" name="description" placeholder="Description"> 
+  </div>
+  
+  <div class="form-group">
+    <label for="category">Category</label>
+    <input type="text" class="form-control" id="category" name="category" placeholder="Category"> 
+  </div>
+  
+  <div class="form-group">
+    <label for="cost">Cost</label>
+    <input type="text" class="form-control" id="cost" name="cost" placeholder="Cost"> 
+  </div>
+  
+  <div class="form-group">
+    <label for="rrp">Rrp</label>
+    <input type="text" class="form-control" id="rrp" name="rrp" placeholder="Rrp"> 
+  </div>
+  
+  <div class="form-group">
+    <label for="imgUrl">Image</label>
+    <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="Image"> 
+  </div>
+  
+  <div class="form-group">
+    <label for="quantity">Quantity</label>
+    <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity"> 
+  </div>
+  
+  
+  <button type="submit" class="btn btn-primary" id="form-button">Create <i class="fa fa-plus"></i></button>
+</form>
+
+<br>
+
+</div>
+
+}

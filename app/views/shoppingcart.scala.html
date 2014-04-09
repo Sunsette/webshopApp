@@ -1,0 +1,31 @@
+@* shoppingcart Template File *@
+@(products: Map[Integer, Product], total: Integer, totalCost: Double)
+@index(""){
+
+<div class="wrapper">
+<div class="shopping-cart-menu">
+
+<h3>Shopping cart: </h3>
+
+<label>Products:</label>
+<ul id="shopping-cart-list">
+
+@for((key,value) <- products){
+<li><a href="/products/@value.getId()">@value.getName()</a>     -   @key st </li>
+}
+<br>
+<li>Quantity: @total</li>
+<li>Total Cost: @totalCost</li>
+</ul>
+
+@if(products.isEmpty){
+	<h3>You have no products in your shopping cart</h3>
+	<button class="btn btn-default"><a href="/user/view/order ">View Orders</a></button>
+}else{
+<button class="btn btn-primary"><a href="/user/order">Create Order <i class="fa fa-check"></i></a></button>
+}
+
+</div>
+
+</div>
+}

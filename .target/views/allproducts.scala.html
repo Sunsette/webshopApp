@@ -1,0 +1,16 @@
+@(products: List[Product])
+
+@index(""){
+	<div class="wrapper">
+	@for(product <- products){
+		<div class="product">
+		<ul>
+		<li><img src="/assets/images/@product.getImgUrl()" alt="..." class="img-thumbnail"></li>
+		<li><a href=/products/@product.getId()>@product.getName()</a></li>
+		<li>Price: @product.getRrp()</li>
+		</ul>
+		</div>
+	}
+	</div>
+	
+}

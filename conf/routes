@@ -1,0 +1,57 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+GET   /admin                       controllers.Application.adminPage()
+
+GET   /admin/create                controllers.Application.createOptions()
+
+GET   /admin/create/product         controllers.ProductController.createProductForm()
+
+POST  /admin/create/createproduct   controllers.ProductController.createProduct()
+
+GET   /admin/create/category        controllers.CategoryController.createCategoryForm()
+
+POST  /admin/create/createcategory  controllers.CategoryController.createCategory()
+
+GET   /admin/edit                   controllers.Application.editOptions()
+
+GET   /admin/edit/products          controllers.ProductController.adminAllProducts()
+
+GET   /admin/edit/product/delete/:id    controllers.ProductController.deleteProduct(id: Int)
+
+GET   /admin/edit/categories        controllers.CategoryController.adminAllCategories()
+
+GET  /admin/edit/categories/delete/:id controllers.CategoryController.deleteCategory(id: Int)
+  
+GET   /user/create                  controllers.UserController.createUserForm()
+
+POST  /user/createuser              controllers.UserController.createUser()
+
+GET   /user/order                    controllers.OrderController.createOrder()
+
+GET   /user/view/order              controllers.OrderController.viewOrder()
+
+POST  /user/login                   controllers.UserController.logIn()
+
+GET   /user/login/request           controllers.UserController.logInRequest()
+
+GET   /user/logout                  controllers.UserController.logOut()
+
+POST  /user/shoppingcart/:id        controllers.ShoppingCartController.addProductToShoppingCart(id: Int)
+
+GET   /user/shoppingcart            controllers.ShoppingCartController.viewShoppingCart()
+
+GET   /products                   controllers.ProductController.viewAllProducts()
+
+GET   /products/:id                controllers.ProductController.viewProduct(id: Int)
+
+GET   /products/category/:categoryname           controllers.ProductController.viewProductsOfXCategory(categoryname)
+
+GET   /categories                  controllers.CategoryController.viewAllCategories()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

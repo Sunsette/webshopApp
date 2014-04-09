@@ -1,0 +1,23 @@
+@* adminallproducts Template File *@
+@(products: List[Product])
+@index(""){
+	<div class="wrapper">
+	<div class="edit-table">
+	<table>
+	@for(product <- products){
+		<tr>
+		<td>@product.getId()</td>
+		<td>@product.getName()</td>
+		<td>@product.getDescription()</td>
+		<td>@product.getCost()</td>
+		<td>@product.getRrp()</td>
+		<td>@product.getInStockQuantity()</td>
+		<td id="delete-product"><a href="/admin/edit/product/delete/@product.getId()"><i class="fa fa-trash-o"></i></a></td>
+		</tr>
+	}
+	
+	</table>
+	</div>
+	</div>
+	
+}

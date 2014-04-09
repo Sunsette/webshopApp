@@ -1,0 +1,62 @@
+@* createuser Template File *@
+@(param: Any)
+@index(""){
+	<div class="form-wrapper">
+	<h1>Sign up</h1>
+		<form action="@routes.UserController.createUser()" method="post" role="form">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="description" name="password" placeholder="Password"> 
+  </div>
+  
+  <div class="form-group" id="firstname-input">
+    <label for="firstname">Firstname</label>
+    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname"> 
+  </div>
+  
+  <div class="form-group" id="lastname-input">
+    <label for="lastname">Lastname</label>
+    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Lastname"> 
+  </div>
+  
+  <div class="address-form">
+  <div class="form-group">
+    <label for="address">Address</label>
+    <input type="text" class="form-control" id="address" name="address" placeholder="Address"> 
+  </div>
+  
+  <div class="form-group" id="town-input">
+    <label for="town">City</label>
+    <input type="text" class="form-control" id="town" name="town" placeholder="City"> 
+  </div>
+  
+  <div class="form-group" id="postcode-input">
+    <label for="postcode">Postcode</label>
+    <input type="text" class="form-control" id="postcode" name="postcode" placeholder="Postcode"> 
+  </div>
+  </div>
+  
+  <div class="tel-dob-form">
+  <div class="form-group">
+    <label for="telephone">Telephone nr</label>
+    <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Telephone nr"> 
+  </div>
+  
+  <div class="form-group">
+    <label for="dob">Date of birth</label>
+    <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of birth"> 
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Sign up</button>
+  
+  </div>
+</form>
+
+
+</div>
+}

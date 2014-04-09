@@ -1,0 +1,28 @@
+@* product Template File *@
+@(product: Product)
+@index(""){
+	<div class="wrapper">
+	<div class="one-product">
+	<div class="product-image">
+	<img src="/assets/images/@product.getImgUrl()" alt="..." class="img-thumbnail">
+	</div>
+	<div class="product-info">
+	<h3>@product.getName()</h1>
+		<h3>@product.getDescription()</h1>
+	<h3>@product.getRrp() kr</h1>
+	@if(product.getInStockQuantity > 0){
+		<form action="@routes.ShoppingCartController.addProductToShoppingCart(product.getId)" method="post" role="form">
+  <div class="form-group" id="quantity-input">
+   <label>Quantity</label> <input type="text" class="form-control" id="quantity" name="quantity" placeholder="">
+  </div>
+    <button type="submit" class="btn btn-primary">Add to shopping cart</button>
+	  </form>
+	  }else{
+	  <h3>Product is currently not in stock</h3>
+	  }
+	  
+	  </div>
+	  </div>
+	  </div>
+	  
+}
